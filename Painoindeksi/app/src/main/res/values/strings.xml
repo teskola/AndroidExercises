@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="pituus">height</string>
+    <string name="paino">weight</string>
+    <string name="laske">Calculate BMI</string>
+</resources>
