@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sää</string>
+    <string name="error">Tapahtui virhe.</string>
+    <string name="fetch">Haetaan säätietoja.</string>
+    <string name="settings">Asetukset</string>
+    <string name="units">yksikkö:</string>
+    <string name="imperial">fahrenheit</string>
+    <string name="metric">SI</string>
+    <string name="save">tallenna</string>
+    <string name="default_unit">metric</string>
+</resources>
