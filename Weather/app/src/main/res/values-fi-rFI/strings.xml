@@ -6,7 +6,7 @@
     <string name="settings">Asetukset</string>
     <string name="units">yksikkö:</string>
     <string name="imperial">fahrenheit</string>
-    <string name="metric">SI</string>
+    <string name="metric">celcius</string>
     <string name="save">tallenna</string>
     <string name="default_unit">metric</string>
 </resources>
