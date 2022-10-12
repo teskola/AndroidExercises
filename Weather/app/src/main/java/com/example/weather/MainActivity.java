@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             windSpeedTextView.setText(getString(R.string.windSpeed, Math.round(wind_speed), speed_unit));
             windSpeedTextView.setVisibility(VISIBLE);
             // https://confluence.ecmwf.int/pages/viewpage.action?pageId=133262398
-            windDirectionIcon.setRotation(360 - wind_direction);
+            windDirectionIcon.setRotation(wind_direction);
             windDirectionIcon.setVisibility(VISIBLE);
             setWeatherIcon(weatherIconId, sun_rise, sun_set);
         }
