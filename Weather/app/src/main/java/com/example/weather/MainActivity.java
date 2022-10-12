@@ -32,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            useDefaultUnits = false;
+            unit = savedInstanceState.getString("SAVED_UNIT", getString(R.string.default_unit));
+        }
+
         if (getIntent().getStringExtra("unit") != null) {
             useDefaultUnits = false;
             unit = getIntent().getStringExtra("unit");
@@ -51,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         fetchWeatherData();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("SAVED_UNIT", unit);
     }
 
     private void fetchWeatherData() {
