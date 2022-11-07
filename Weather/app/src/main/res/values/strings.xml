@@ -3,7 +3,7 @@
     <string name="default_unit">"metric"</string>
     <string name="fetch">Fetching weather data.</string>
     <string name="error">Something went wrong.</string>
-    <string name="temperature" translatable="false">%1$d °%2$s</string>
+    <string name="temperature" translatable="false">%1$d°%2$s</string>
     <string name="windSpeed" translatable="false">%1$d %2$s</string>
     <string name="settings">Settings</string>
     <string name="units">units:</string>

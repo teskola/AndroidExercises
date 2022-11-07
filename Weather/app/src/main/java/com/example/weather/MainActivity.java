@@ -2,6 +2,7 @@ package com.example.weather;
 
 import static android.view.View.VISIBLE;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,7 +20,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String API_KEY = "db665b34ad76791b17f190401a72755f";
+    private static final String API_KEY = "";
     private String lat = "61.5";
     private String lon = "23.79";
     private String unit;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
+    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putString("SAVED_UNIT", unit);
     }

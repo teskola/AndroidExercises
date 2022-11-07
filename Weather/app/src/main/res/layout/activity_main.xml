@@ -4,83 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/locationTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center|start"
-        android:textSize="24sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/windSpeedTextView"
-        app:layout_constraintEnd_toStartOf="@+id/temperatureTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/windDirectionIcon" />
-
-    <TextView
-        android:id="@+id/temperatureTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="bottom"
-        android:textSize="36sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/windDirectionIcon"
-        app:layout_constraintEnd_toStartOf="@+id/windDirectionIcon"
-        app:layout_constraintTop_toTopOf="@+id/weatherIcon" />
-
-    <ImageView
-        android:id="@+id/weatherIcon"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:layout_marginEnd="8dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/windSpeedTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/windDirectionIcon"
-        app:srcCompat="@drawable/day_clear" />
-
-    <TextView
-        android:id="@+id/feelsLikeTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center|top"
-        android:textSize="16sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/windSpeedTextView"
-        app:layout_constraintEnd_toEndOf="@+id/temperatureTextView"
-        app:layout_constraintStart_toStartOf="@+id/temperatureTextView"
-        app:layout_constraintTop_toTopOf="@+id/windSpeedTextView" />
-
-    <TextView
-        android:id="@+id/windSpeedTextView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weatherCard"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center|top"
-        android:textSize="16sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/windDirectionIcon"
-        app:layout_constraintStart_toStartOf="@+id/windDirectionIcon"
-        app:layout_constraintTop_toBottomOf="@+id/windDirectionIcon" />
-
-    <ImageView
-        android:id="@+id/windDirectionIcon"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/weatherIcon"
+        android:background="@drawable/white_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/windarrow" />
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/josefin_sans"
+            android:gravity="center|start"
+            android:textSize="24sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/windSpeedTextView"
+            app:layout_constraintEnd_toStartOf="@+id/temperatureTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/windDirectionIcon" />
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/josefin_sans"
+            android:gravity="bottom"
+            android:textSize="34sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/windDirectionIcon"
+            app:layout_constraintEnd_toStartOf="@+id/windDirectionIcon"
+            app:layout_constraintTop_toTopOf="@+id/weatherIcon" />
+
+        <ImageView
+            android:id="@+id/weatherIcon"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/windSpeedTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/windDirectionIcon"
+            app:srcCompat="@drawable/day_clear" />
+
+        <TextView
+            android:id="@+id/feelsLikeTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/josefin_sans"
+            android:gravity="center|top"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/windSpeedTextView"
+            app:layout_constraintEnd_toEndOf="@+id/temperatureTextView"
+            app:layout_constraintStart_toStartOf="@+id/temperatureTextView"
+            app:layout_constraintTop_toTopOf="@+id/windSpeedTextView" />
+
+        <TextView
+            android:id="@+id/windSpeedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/josefin_sans"
+            android:gravity="center|top"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/windDirectionIcon"
+            app:layout_constraintStart_toStartOf="@+id/windDirectionIcon"
+            app:layout_constraintTop_toBottomOf="@+id/windDirectionIcon" />
+
+        <ImageView
+            android:id="@+id/windDirectionIcon"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/weatherIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/windarrow" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:onClick="openSettingsIntent"
         android:text="@string/settings"
         app:layout_constraintBottom_toBottomOf="parent"
