@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String API_KEY = "";
+    private static final String API_KEY = "db665b34ad76791b17f190401a72755f";
     private String lat = "61.5";
     private String lon = "23.79";
     private String unit;
