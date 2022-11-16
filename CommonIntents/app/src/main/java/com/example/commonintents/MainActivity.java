@@ -45,16 +45,19 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         numberText = findViewById(R.id.phoneText);
         locationText = findViewById(R.id.locationTextView);
 
-        callButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String phoneNumber = numberText.getText().toString();
-                callPhoneNumber(phoneNumber);
-            }
+        callButton.setOnClickListener(view -> {
+            String phoneNumber = numberText.getText().toString();
+            callPhoneNumber(phoneNumber);
         });
+
         smsButton.setOnClickListener(view -> composeSmsMessage("Hello."));
         mapButton.setOnClickListener(view -> showMap(Uri.parse("geo:61.5,23.79")));
         alarmButton.setOnClickListener(view -> createAlarm("Herätys!", 8, 0, true));
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            requestPermission();
+        }
 
     }
 
@@ -78,12 +81,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             if (currentLocation != null) {
                 lat = currentLocation.getLatitude();
                 lon = currentLocation.getLongitude();
+                locationText.setText("lat: " + lat + "\nlon: " + lon);
             } else {
                 locationText.setText("No GPS data.");
             }
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-        } else {
-            requestPermission();
         }
     }
 
@@ -103,6 +105,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED &&
                         grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                     startLocationListener();
+                } else {
+                    locationText.setText("No access to GPS data.");
                 }
         }
     }
